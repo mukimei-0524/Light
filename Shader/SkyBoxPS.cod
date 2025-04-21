@@ -51,10 +51,10 @@ dcl_temps 3
 //   v1.x <- pin.world_position.x; v1.y <- pin.world_position.y; v1.z <- pin.world_position.z; v1.w <- pin.world_position.w; 
 //   o0.x <- <main return value>.x; o0.y <- <main return value>.y; o0.z <- <main return value>.z; o0.w <- <main return value>.w
 //
-#line 17 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\skybox.hlsli"
+#line 17 "C:\Users\2230135\Desktop\Light\HLSL\skybox.hlsli"
 mov r0.x, l(3.141593)  // r0.x <- PI
 
-#line 8 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\SkyBoxPS.hlsl"
+#line 8 "C:\Users\2230135\Desktop\Light\HLSL\SkyBoxPS.hlsl"
 mov r0.yzw, -cb1[4].xxyz
 add r0.yzw, r0.yyzw, v1.xxyz
 dp3 r1.x, r0.yzwy, r0.yzwy

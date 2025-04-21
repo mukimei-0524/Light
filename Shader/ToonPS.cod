@@ -98,7 +98,7 @@ dcl_temps 15
 //   v4.x <- pin.color.x; v4.y <- pin.color.y; v4.z <- pin.color.z; v4.w <- pin.color.w; 
 //   o0.x <- <main return value>.x; o0.y <- <main return value>.y; o0.z <- <main return value>.z; o0.w <- <main return value>.w
 //
-#line 9 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 9 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
 sample_indexable(texture2d)(float,float,float,float) r0.xyzw, v3.xyxx, t0.xyzw, s0
 mul r0.xyzw, r0.xyzw, v4.xyzw  // r0.x <- diffuseColor.x; r0.y <- diffuseColor.y; r0.z <- diffuseColor.z; r0.w <- diffuseColor.w
 
@@ -143,7 +143,7 @@ mov r2.xyz, r2.xyzx
 mov r7.xyz, cb0[7].xyzx
 mov r5.xyz, r5.xyzx
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
 mov r8.xyz, -r2.xyzx
 dp3 r2.w, r1.xyzx, r8.xyzx
 mul r2.w, r2.w, l(0.500000)
@@ -159,7 +159,7 @@ sample_indexable(texture2d)(float,float,float,float) r8.xyz, r8.xyxx, t1.xyzw, s
 mul r7.xyz, r7.xyzx, r8.xyzx
 mul r7.xyz, r5.xyzx, r7.xyzx  // r7.x <- <CalcToonDiffuse return value>.x; r7.y <- <CalcToonDiffuse return value>.y; r7.z <- <CalcToonDiffuse return value>.z
 
-#line 24 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 24 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
 mov r7.xyz, r7.xyzx  // r7.x <- directionalDiffuse.x; r7.y <- directionalDiffuse.y; r7.z <- directionalDiffuse.z
 
 #line 25
@@ -171,7 +171,7 @@ mov r3.xyz, r3.xyzx
 mov r1.w, r1.w
 mov r6.xyz, r6.xyzx
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
 dp3 r2.w, r2.xyzx, r1.xyzx
 add r2.w, r2.w, r2.w
 mov r2.w, -r2.w
@@ -195,7 +195,7 @@ exp r2.x, r2.x  // r2.x <- d
 mul r2.xyz, r2.xxxx, r8.xyzx
 mul r2.xyz, r6.xyzx, r2.xyzx  // r2.x <- <CalcPhongSpecular return value>.x; r2.y <- <CalcPhongSpecular return value>.y; r2.z <- <CalcPhongSpecular return value>.z
 
-#line 25 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 25 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
 mov r2.xyz, r2.xyzx  // r2.x <- directionalSpecular.x; r2.y <- directionalSpecular.y; r2.z <- directionalSpecular.z
 
 #line 28
@@ -252,7 +252,7 @@ if_nz r3.w
     imul null, r5.w, r2.w, l(3)
     mov r11.xyz, cb0[r5.w + 9].xyzx
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r12.xyz, -r10.xyzx
     dp3 r5.w, r1.xyzx, r12.xyzx
     mul r5.w, r5.w, l(0.500000)
@@ -268,7 +268,7 @@ if_nz r3.w
     mul r11.xyz, r11.xyzx, r12.xyzx
     mul r11.xyz, r5.xyzx, r11.xyzx  // r11.x <- <CalcToonDiffuse return value>.x; r11.y <- <CalcToonDiffuse return value>.y; r11.z <- <CalcToonDiffuse return value>.z
 
-#line 47 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 47 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r11.xyz, r8.wwww, r11.xyzx
     add r8.xyz, r8.xyzx, r11.xyzx
 
@@ -279,7 +279,7 @@ if_nz r3.w
     imul null, r5.w, r2.w, l(3)
     mov r11.xyz, cb0[r5.w + 9].xyzx
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r5.w, r10.xyzx, r1.xyzx
     add r5.w, r5.w, r5.w
     mov r5.w, -r5.w
@@ -303,7 +303,7 @@ if_nz r3.w
     mul r10.xyz, r5.wwww, r11.xyzx
     mul r10.xyz, r6.xyzx, r10.xyzx  // r10.x <- <CalcPhongSpecular return value>.x; r10.y <- <CalcPhongSpecular return value>.y; r10.z <- <CalcPhongSpecular return value>.z
 
-#line 49 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 49 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r10.xyz, r8.wwww, r10.xyzx
     add r9.xyz, r9.xyzx, r10.xyzx
 
@@ -372,7 +372,7 @@ if_nz r5.w
     imul null, r5.w, r7.w, l(3)
     mov r11.xyz, cb0[r5.w + 9].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r12.xyz, -r10.xyzx
     dp3 r5.w, r1.xyzx, r12.xyzx
     mul r5.w, r5.w, l(0.500000)
@@ -388,7 +388,7 @@ if_nz r5.w
     mul r11.xyz, r11.xyzx, r12.xyzx
     mul r11.xyz, r5.xyzx, r11.xyzx  // r11.x <- <CalcToonDiffuse return value>.x; r11.y <- <CalcToonDiffuse return value>.y; r11.z <- <CalcToonDiffuse return value>.z
 
-#line 47 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 47 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r11.xyz, r9.wwww, r11.xyzx
     add r8.xyz, r8.xyzx, r11.xyzx
 
@@ -399,7 +399,7 @@ if_nz r5.w
     imul null, r5.w, r7.w, l(3)
     mov r11.xyz, cb0[r5.w + 9].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r5.w, r10.xyzx, r1.xyzx
     add r5.w, r5.w, r5.w
     mov r5.w, -r5.w
@@ -423,7 +423,7 @@ if_nz r5.w
     mul r10.xyz, r5.wwww, r11.xyzx
     mul r10.xyz, r6.xyzx, r10.xyzx  // r10.x <- <CalcPhongSpecular return value>.x; r10.y <- <CalcPhongSpecular return value>.y; r10.z <- <CalcPhongSpecular return value>.z
 
-#line 49 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 49 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r10.xyz, r9.wwww, r10.xyzx
     add r9.xyz, r9.xyzx, r10.xyzx
 
@@ -496,7 +496,7 @@ if_nz r5.w
     imul null, r5.w, r8.w, l(3)
     mov r11.xyz, cb0[r5.w + 9].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r12.xyz, -r10.xyzx
     dp3 r5.w, r1.xyzx, r12.xyzx
     mul r5.w, r5.w, l(0.500000)
@@ -512,7 +512,7 @@ if_nz r5.w
     mul r11.xyz, r11.xyzx, r12.xyzx
     mul r11.xyz, r5.xyzx, r11.xyzx  // r11.x <- <CalcToonDiffuse return value>.x; r11.y <- <CalcToonDiffuse return value>.y; r11.z <- <CalcToonDiffuse return value>.z
 
-#line 47 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 47 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r11.xyz, r10.wwww, r11.xyzx
     add r8.xyz, r8.xyzx, r11.xyzx
 
@@ -523,7 +523,7 @@ if_nz r5.w
     imul null, r5.w, r8.w, l(3)
     mov r11.xyz, cb0[r5.w + 9].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r5.w, r10.xyzx, r1.xyzx
     add r5.w, r5.w, r5.w
     mov r5.w, -r5.w
@@ -547,7 +547,7 @@ if_nz r5.w
     mul r10.xyz, r5.wwww, r11.xyzx
     mul r10.xyz, r6.xyzx, r10.xyzx  // r10.x <- <CalcPhongSpecular return value>.x; r10.y <- <CalcPhongSpecular return value>.y; r10.z <- <CalcPhongSpecular return value>.z
 
-#line 49 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 49 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r10.xyz, r10.wwww, r10.xyzx
     add r9.xyz, r9.xyzx, r10.xyzx
 
@@ -622,7 +622,7 @@ if_nz r2.w
     imul null, r2.w, r8.w, l(3)
     mov r11.xyz, cb0[r2.w + 9].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r12.xyz, -r10.xyzx
     dp3 r2.w, r1.xyzx, r12.xyzx
     mul r2.w, r2.w, l(0.500000)
@@ -638,7 +638,7 @@ if_nz r2.w
     mul r11.xyz, r11.xyzx, r12.xyzx
     mul r11.xyz, r5.xyzx, r11.xyzx  // r11.x <- <CalcToonDiffuse return value>.x; r11.y <- <CalcToonDiffuse return value>.y; r11.z <- <CalcToonDiffuse return value>.z
 
-#line 47 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 47 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r11.xyz, r7.wwww, r11.xyzx
     add r8.xyz, r8.xyzx, r11.xyzx
 
@@ -649,7 +649,7 @@ if_nz r2.w
     imul null, r2.w, r8.w, l(3)
     mov r11.xyz, cb0[r2.w + 9].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r2.w, r10.xyzx, r1.xyzx
     add r2.w, r2.w, r2.w
     mov r2.w, -r2.w
@@ -673,7 +673,7 @@ if_nz r2.w
     mul r10.xyz, r2.wwww, r11.xyzx
     mul r10.xyz, r6.xyzx, r10.xyzx  // r10.x <- <CalcPhongSpecular return value>.x; r10.y <- <CalcPhongSpecular return value>.y; r10.z <- <CalcPhongSpecular return value>.z
 
-#line 49 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 49 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r10.xyz, r7.wwww, r10.xyzx
     add r9.xyz, r9.xyzx, r10.xyzx
 
@@ -741,7 +741,7 @@ if_nz r2.w
     imul null, r4.w, r8.w, l(3)
     mov r11.xyz, cb0[r4.w + 9].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r12.xyz, -r10.xyzx
     dp3 r4.w, r1.xyzx, r12.xyzx
     mul r4.w, r4.w, l(0.500000)
@@ -757,7 +757,7 @@ if_nz r2.w
     mul r11.xyz, r11.xyzx, r12.xyzx
     mul r11.xyz, r5.xyzx, r11.xyzx  // r11.x <- <CalcToonDiffuse return value>.x; r11.y <- <CalcToonDiffuse return value>.y; r11.z <- <CalcToonDiffuse return value>.z
 
-#line 47 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 47 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r11.xyz, r7.wwww, r11.xyzx
     add r8.xyz, r8.xyzx, r11.xyzx
 
@@ -768,7 +768,7 @@ if_nz r2.w
     imul null, r4.w, r8.w, l(3)
     mov r11.xyz, cb0[r4.w + 9].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r4.w, r10.xyzx, r1.xyzx
     add r4.w, r4.w, r4.w
     mov r4.w, -r4.w
@@ -792,7 +792,7 @@ if_nz r2.w
     mul r10.xyz, r4.wwww, r11.xyzx
     mul r10.xyz, r6.xyzx, r10.xyzx  // r10.x <- <CalcPhongSpecular return value>.x; r10.y <- <CalcPhongSpecular return value>.y; r10.z <- <CalcPhongSpecular return value>.z
 
-#line 49 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 49 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r10.xyz, r7.wwww, r10.xyzx
     add r9.xyz, r9.xyzx, r10.xyzx
 
@@ -860,7 +860,7 @@ if_nz r2.w
     imul null, r4.w, r8.w, l(3)
     mov r11.xyz, cb0[r4.w + 9].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r12.xyz, -r10.xyzx
     dp3 r4.w, r1.xyzx, r12.xyzx
     mul r4.w, r4.w, l(0.500000)
@@ -876,7 +876,7 @@ if_nz r2.w
     mul r11.xyz, r11.xyzx, r12.xyzx
     mul r11.xyz, r5.xyzx, r11.xyzx  // r11.x <- <CalcToonDiffuse return value>.x; r11.y <- <CalcToonDiffuse return value>.y; r11.z <- <CalcToonDiffuse return value>.z
 
-#line 47 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 47 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r11.xyz, r7.wwww, r11.xyzx
     add r8.xyz, r8.xyzx, r11.xyzx
 
@@ -887,7 +887,7 @@ if_nz r2.w
     imul null, r4.w, r8.w, l(3)
     mov r11.xyz, cb0[r4.w + 9].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r4.w, r10.xyzx, r1.xyzx
     add r4.w, r4.w, r4.w
     mov r4.w, -r4.w
@@ -911,7 +911,7 @@ if_nz r2.w
     mul r10.xyz, r4.wwww, r11.xyzx
     mul r10.xyz, r6.xyzx, r10.xyzx  // r10.x <- <CalcPhongSpecular return value>.x; r10.y <- <CalcPhongSpecular return value>.y; r10.z <- <CalcPhongSpecular return value>.z
 
-#line 49 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 49 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r10.xyz, r7.wwww, r10.xyzx
     add r9.xyz, r9.xyzx, r10.xyzx
 
@@ -979,7 +979,7 @@ if_nz r2.w
     imul null, r4.w, r8.w, l(3)
     mov r11.xyz, cb0[r4.w + 9].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r12.xyz, -r10.xyzx
     dp3 r4.w, r1.xyzx, r12.xyzx
     mul r4.w, r4.w, l(0.500000)
@@ -995,7 +995,7 @@ if_nz r2.w
     mul r11.xyz, r11.xyzx, r12.xyzx
     mul r11.xyz, r5.xyzx, r11.xyzx  // r11.x <- <CalcToonDiffuse return value>.x; r11.y <- <CalcToonDiffuse return value>.y; r11.z <- <CalcToonDiffuse return value>.z
 
-#line 47 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 47 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r11.xyz, r7.wwww, r11.xyzx
     add r8.xyz, r8.xyzx, r11.xyzx
 
@@ -1006,7 +1006,7 @@ if_nz r2.w
     imul null, r4.w, r8.w, l(3)
     mov r11.xyz, cb0[r4.w + 9].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r4.w, r10.xyzx, r1.xyzx
     add r4.w, r4.w, r4.w
     mov r4.w, -r4.w
@@ -1030,7 +1030,7 @@ if_nz r2.w
     mul r10.xyz, r4.wwww, r11.xyzx
     mul r10.xyz, r6.xyzx, r10.xyzx  // r10.x <- <CalcPhongSpecular return value>.x; r10.y <- <CalcPhongSpecular return value>.y; r10.z <- <CalcPhongSpecular return value>.z
 
-#line 49 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 49 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r10.xyz, r7.wwww, r10.xyzx
     add r9.xyz, r9.xyzx, r10.xyzx
 
@@ -1085,7 +1085,7 @@ if_nz r2.w
     mov r10.xyz, r10.xyzx  // r10.x <- lightVector.x; r10.y <- lightVector.y; r10.z <- lightVector.z
     mov r11.xyz, cb0[30].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r12.xyz, -r10.xyzx
     dp3 r2.w, r1.xyzx, r12.xyzx
     mul r2.w, r2.w, l(0.500000)
@@ -1101,7 +1101,7 @@ if_nz r2.w
     mul r11.xyz, r11.xyzx, r12.xyzx
     mul r11.xyz, r5.xyzx, r11.xyzx  // r11.x <- <CalcToonDiffuse return value>.x; r11.y <- <CalcToonDiffuse return value>.y; r11.z <- <CalcToonDiffuse return value>.z
 
-#line 47 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 47 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r11.xyz, r3.wwww, r11.xyzx
     add r8.xyz, r8.xyzx, r11.xyzx
 
@@ -1111,7 +1111,7 @@ if_nz r2.w
     mov r10.xyz, r10.xyzx  // r10.x <- lightVector.x; r10.y <- lightVector.y; r10.z <- lightVector.z
     mov r11.xyz, cb0[30].xyzx  // r11.x <- lightColor.x; r11.y <- lightColor.y; r11.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r2.w, r10.xyzx, r1.xyzx
     add r2.w, r2.w, r2.w
     mov r2.w, -r2.w
@@ -1135,7 +1135,7 @@ if_nz r2.w
     mul r10.xyz, r2.wwww, r11.xyzx
     mul r10.xyz, r6.xyzx, r10.xyzx  // r10.x <- <CalcPhongSpecular return value>.x; r10.y <- <CalcPhongSpecular return value>.y; r10.z <- <CalcPhongSpecular return value>.z
 
-#line 49 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 49 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r10.xyz, r3.wwww, r10.xyzx
     add r9.xyz, r9.xyzx, r10.xyzx
 
@@ -1227,7 +1227,7 @@ if_nz r3.w
     imul null, r8.w, r2.w, l(4)
     mov r13.xyz, cb0[r8.w + 34].xyzx
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r14.xyz, -r12.xyzx
     dp3 r8.w, r1.xyzx, r14.xyzx
     mul r8.w, r8.w, l(0.500000)
@@ -1243,7 +1243,7 @@ if_nz r3.w
     mul r13.xyz, r13.xyzx, r14.xyzx
     mul r13.xyz, r5.xyzx, r13.xyzx  // r13.x <- <CalcToonDiffuse return value>.x; r13.y <- <CalcToonDiffuse return value>.y; r13.z <- <CalcToonDiffuse return value>.z
 
-#line 79 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 79 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r13.xyz, r5.wwww, r13.xyzx
     add r10.xyz, r10.xyzx, r13.xyzx
 
@@ -1254,7 +1254,7 @@ if_nz r3.w
     imul null, r8.w, r2.w, l(4)
     mov r13.xyz, cb0[r8.w + 34].xyzx
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r8.w, r12.xyzx, r1.xyzx
     add r8.w, r8.w, r8.w
     mov r8.w, -r8.w
@@ -1278,7 +1278,7 @@ if_nz r3.w
     mul r12.xyz, r8.wwww, r13.xyzx
     mul r12.xyz, r6.xyzx, r12.xyzx  // r12.x <- <CalcPhongSpecular return value>.x; r12.y <- <CalcPhongSpecular return value>.y; r12.z <- <CalcPhongSpecular return value>.z
 
-#line 81 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 81 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r12.xyz, r5.wwww, r12.xyzx
     add r11.xyz, r11.xyzx, r12.xyzx
 
@@ -1375,7 +1375,7 @@ if_nz r5.w
     imul null, r9.w, r7.w, l(4)
     mov r13.xyz, cb0[r9.w + 34].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r14.xyz, -r12.xyzx
     dp3 r9.w, r1.xyzx, r14.xyzx
     mul r9.w, r9.w, l(0.500000)
@@ -1391,7 +1391,7 @@ if_nz r5.w
     mul r13.xyz, r13.xyzx, r14.xyzx
     mul r13.xyz, r5.xyzx, r13.xyzx  // r13.x <- <CalcToonDiffuse return value>.x; r13.y <- <CalcToonDiffuse return value>.y; r13.z <- <CalcToonDiffuse return value>.z
 
-#line 79 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 79 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r13.xyz, r5.wwww, r13.xyzx
     add r10.xyz, r10.xyzx, r13.xyzx
 
@@ -1402,7 +1402,7 @@ if_nz r5.w
     imul null, r9.w, r7.w, l(4)
     mov r13.xyz, cb0[r9.w + 34].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r9.w, r12.xyzx, r1.xyzx
     add r9.w, r9.w, r9.w
     mov r9.w, -r9.w
@@ -1426,7 +1426,7 @@ if_nz r5.w
     mul r12.xyz, r9.wwww, r13.xyzx
     mul r12.xyz, r6.xyzx, r12.xyzx  // r12.x <- <CalcPhongSpecular return value>.x; r12.y <- <CalcPhongSpecular return value>.y; r12.z <- <CalcPhongSpecular return value>.z
 
-#line 81 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 81 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r12.xyz, r5.wwww, r12.xyzx
     add r11.xyz, r11.xyzx, r12.xyzx
 
@@ -1527,7 +1527,7 @@ if_nz r5.w
     imul null, r10.w, r8.w, l(4)
     mov r13.xyz, cb0[r10.w + 34].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r14.xyz, -r12.xyzx
     dp3 r10.w, r1.xyzx, r14.xyzx
     mul r10.w, r10.w, l(0.500000)
@@ -1543,7 +1543,7 @@ if_nz r5.w
     mul r13.xyz, r13.xyzx, r14.xyzx
     mul r13.xyz, r5.xyzx, r13.xyzx  // r13.x <- <CalcToonDiffuse return value>.x; r13.y <- <CalcToonDiffuse return value>.y; r13.z <- <CalcToonDiffuse return value>.z
 
-#line 79 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 79 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r13.xyz, r5.wwww, r13.xyzx
     add r10.xyz, r10.xyzx, r13.xyzx
 
@@ -1554,7 +1554,7 @@ if_nz r5.w
     imul null, r10.w, r8.w, l(4)
     mov r13.xyz, cb0[r10.w + 34].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r10.w, r12.xyzx, r1.xyzx
     add r10.w, r10.w, r10.w
     mov r10.w, -r10.w
@@ -1578,7 +1578,7 @@ if_nz r5.w
     mul r12.xyz, r10.wwww, r13.xyzx
     mul r12.xyz, r6.xyzx, r12.xyzx  // r12.x <- <CalcPhongSpecular return value>.x; r12.y <- <CalcPhongSpecular return value>.y; r12.z <- <CalcPhongSpecular return value>.z
 
-#line 81 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 81 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r12.xyz, r5.wwww, r12.xyzx
     add r11.xyz, r11.xyzx, r12.xyzx
 
@@ -1681,7 +1681,7 @@ if_nz r2.w
     imul null, r7.w, r8.w, l(4)
     mov r13.xyz, cb0[r7.w + 34].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r14.xyz, -r12.xyzx
     dp3 r7.w, r1.xyzx, r14.xyzx
     mul r7.w, r7.w, l(0.500000)
@@ -1697,7 +1697,7 @@ if_nz r2.w
     mul r13.xyz, r13.xyzx, r14.xyzx
     mul r13.xyz, r5.xyzx, r13.xyzx  // r13.x <- <CalcToonDiffuse return value>.x; r13.y <- <CalcToonDiffuse return value>.y; r13.z <- <CalcToonDiffuse return value>.z
 
-#line 79 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 79 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r13.xyz, r2.wwww, r13.xyzx
     add r10.xyz, r10.xyzx, r13.xyzx
 
@@ -1708,7 +1708,7 @@ if_nz r2.w
     imul null, r7.w, r8.w, l(4)
     mov r13.xyz, cb0[r7.w + 34].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r7.w, r12.xyzx, r1.xyzx
     add r7.w, r7.w, r7.w
     mov r7.w, -r7.w
@@ -1732,7 +1732,7 @@ if_nz r2.w
     mul r12.xyz, r7.wwww, r13.xyzx
     mul r12.xyz, r6.xyzx, r12.xyzx  // r12.x <- <CalcPhongSpecular return value>.x; r12.y <- <CalcPhongSpecular return value>.y; r12.z <- <CalcPhongSpecular return value>.z
 
-#line 81 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 81 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r12.xyz, r2.wwww, r12.xyzx
     add r11.xyz, r11.xyzx, r12.xyzx
 
@@ -1828,7 +1828,7 @@ if_nz r2.w
     imul null, r7.w, r8.w, l(4)
     mov r13.xyz, cb0[r7.w + 34].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r14.xyz, -r12.xyzx
     dp3 r7.w, r1.xyzx, r14.xyzx
     mul r7.w, r7.w, l(0.500000)
@@ -1844,7 +1844,7 @@ if_nz r2.w
     mul r13.xyz, r13.xyzx, r14.xyzx
     mul r13.xyz, r5.xyzx, r13.xyzx  // r13.x <- <CalcToonDiffuse return value>.x; r13.y <- <CalcToonDiffuse return value>.y; r13.z <- <CalcToonDiffuse return value>.z
 
-#line 79 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 79 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r13.xyz, r4.wwww, r13.xyzx
     add r10.xyz, r10.xyzx, r13.xyzx
 
@@ -1855,7 +1855,7 @@ if_nz r2.w
     imul null, r7.w, r8.w, l(4)
     mov r13.xyz, cb0[r7.w + 34].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r7.w, r12.xyzx, r1.xyzx
     add r7.w, r7.w, r7.w
     mov r7.w, -r7.w
@@ -1879,7 +1879,7 @@ if_nz r2.w
     mul r12.xyz, r7.wwww, r13.xyzx
     mul r12.xyz, r6.xyzx, r12.xyzx  // r12.x <- <CalcPhongSpecular return value>.x; r12.y <- <CalcPhongSpecular return value>.y; r12.z <- <CalcPhongSpecular return value>.z
 
-#line 81 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 81 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r12.xyz, r4.wwww, r12.xyzx
     add r11.xyz, r11.xyzx, r12.xyzx
 
@@ -1975,7 +1975,7 @@ if_nz r2.w
     imul null, r7.w, r8.w, l(4)
     mov r13.xyz, cb0[r7.w + 34].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r14.xyz, -r12.xyzx
     dp3 r7.w, r1.xyzx, r14.xyzx
     mul r7.w, r7.w, l(0.500000)
@@ -1991,7 +1991,7 @@ if_nz r2.w
     mul r13.xyz, r13.xyzx, r14.xyzx
     mul r13.xyz, r5.xyzx, r13.xyzx  // r13.x <- <CalcToonDiffuse return value>.x; r13.y <- <CalcToonDiffuse return value>.y; r13.z <- <CalcToonDiffuse return value>.z
 
-#line 79 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 79 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r13.xyz, r4.wwww, r13.xyzx
     add r10.xyz, r10.xyzx, r13.xyzx
 
@@ -2002,7 +2002,7 @@ if_nz r2.w
     imul null, r7.w, r8.w, l(4)
     mov r13.xyz, cb0[r7.w + 34].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r7.w, r12.xyzx, r1.xyzx
     add r7.w, r7.w, r7.w
     mov r7.w, -r7.w
@@ -2026,7 +2026,7 @@ if_nz r2.w
     mul r12.xyz, r7.wwww, r13.xyzx
     mul r12.xyz, r6.xyzx, r12.xyzx  // r12.x <- <CalcPhongSpecular return value>.x; r12.y <- <CalcPhongSpecular return value>.y; r12.z <- <CalcPhongSpecular return value>.z
 
-#line 81 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 81 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r12.xyz, r4.wwww, r12.xyzx
     add r11.xyz, r11.xyzx, r12.xyzx
 
@@ -2122,7 +2122,7 @@ if_nz r2.w
     imul null, r7.w, r8.w, l(4)
     mov r13.xyz, cb0[r7.w + 34].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r14.xyz, -r12.xyzx
     dp3 r7.w, r1.xyzx, r14.xyzx
     mul r7.w, r7.w, l(0.500000)
@@ -2138,7 +2138,7 @@ if_nz r2.w
     mul r13.xyz, r13.xyzx, r14.xyzx
     mul r13.xyz, r5.xyzx, r13.xyzx  // r13.x <- <CalcToonDiffuse return value>.x; r13.y <- <CalcToonDiffuse return value>.y; r13.z <- <CalcToonDiffuse return value>.z
 
-#line 79 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 79 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r13.xyz, r4.wwww, r13.xyzx
     add r10.xyz, r10.xyzx, r13.xyzx
 
@@ -2149,7 +2149,7 @@ if_nz r2.w
     imul null, r7.w, r8.w, l(4)
     mov r13.xyz, cb0[r7.w + 34].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r7.w, r12.xyzx, r1.xyzx
     add r7.w, r7.w, r7.w
     mov r7.w, -r7.w
@@ -2173,7 +2173,7 @@ if_nz r2.w
     mul r12.xyz, r7.wwww, r13.xyzx
     mul r12.xyz, r6.xyzx, r12.xyzx  // r12.x <- <CalcPhongSpecular return value>.x; r12.y <- <CalcPhongSpecular return value>.y; r12.z <- <CalcPhongSpecular return value>.z
 
-#line 81 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 81 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r12.xyz, r4.wwww, r12.xyzx
     add r11.xyz, r11.xyzx, r12.xyzx
 
@@ -2252,7 +2252,7 @@ if_nz r2.w
     mov r12.xyz, r12.xyzx  // r12.x <- lightVector.x; r12.y <- lightVector.y; r12.z <- lightVector.z
     mov r13.xyz, cb0[62].xyzx  // r13.x <- lightColor.x; r13.y <- lightColor.y; r13.z <- lightColor.z
 
-#line 104 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 104 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     mov r14.xyz, -r12.xyzx
     dp3 r3.w, r1.xyzx, r14.xyzx
     mul r3.w, r3.w, l(0.500000)
@@ -2268,7 +2268,7 @@ if_nz r2.w
     mul r13.xyz, r13.xyzx, r14.xyzx
     mul r5.xyz, r5.xyzx, r13.xyzx  // r5.x <- <CalcToonDiffuse return value>.x; r5.y <- <CalcToonDiffuse return value>.y; r5.z <- <CalcToonDiffuse return value>.z
 
-#line 79 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 79 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r5.xyz, r2.wwww, r5.xyzx
     add r10.xyz, r5.xyzx, r10.xyzx
 
@@ -2278,7 +2278,7 @@ if_nz r2.w
     mov r12.xyz, r12.xyzx  // r12.x <- lightVector.x; r12.y <- lightVector.y; r12.z <- lightVector.z
     mov r5.xyz, cb0[62].xyzx  // r5.x <- lightColor.x; r5.y <- lightColor.y; r5.z <- lightColor.z
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
     dp3 r3.w, r12.xyzx, r1.xyzx
     add r3.w, r3.w, r3.w
     mov r3.w, -r3.w
@@ -2302,7 +2302,7 @@ if_nz r2.w
     mul r1.xyz, r1.xxxx, r5.xyzx
     mul r1.xyz, r6.xyzx, r1.xyzx  // r1.x <- <CalcPhongSpecular return value>.x; r1.y <- <CalcPhongSpecular return value>.y; r1.z <- <CalcPhongSpecular return value>.z
 
-#line 81 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\ToonPS.hlsl"
+#line 81 "C:\Users\2230135\Desktop\Light\HLSL\ToonPS.hlsl"
     mul r1.xyz, r2.wwww, r1.xyzx
     add r11.xyz, r1.xyzx, r11.xyzx
 

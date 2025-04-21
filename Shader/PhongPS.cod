@@ -124,7 +124,7 @@ dcl_temps 19
 //   v7.x <- pin.shadowTexcoord.x; v7.y <- pin.shadowTexcoord.y; v7.z <- pin.shadowTexcoord.z; 
 //   o0.x <- <main return value>.x; o0.y <- <main return value>.y; o0.z <- <main return value>.z; o0.w <- <main return value>.w
 //
-#line 17 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\PhongPS.hlsl"
+#line 17 "C:\Users\2230135\Desktop\Light\HLSL\PhongPS.hlsl"
 sample_indexable(texture2d)(float,float,float,float) r0.xyzw, v5.xyxx, t0.xyzw, s0
 mul r0.xyzw, r0.xyzw, v6.xyzw  // r0.x <- diffuseColor.x; r0.y <- diffuseColor.y; r0.z <- diffuseColor.z; r0.w <- diffuseColor.w
 
@@ -195,7 +195,7 @@ mov r2.xyz, r2.xyzx
 mov r7.xyz, cb0[7].xyzx
 mov r5.xyz, r5.xyzx
 
-#line 49 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 49 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
 mov r8.xyz, -r2.xyzx
 dp3 r2.w, r8.xyzx, r1.xyzx  // r2.w <- d
 
@@ -207,7 +207,7 @@ max r2.w, r2.w, r3.w
 mul r8.xyz, r5.xyzx, r2.wwww
 mul r7.xyz, r7.xyzx, r8.xyzx  // r7.x <- <CalcLambertDiffuse return value>.x; r7.y <- <CalcLambertDiffuse return value>.y; r7.z <- <CalcLambertDiffuse return value>.z
 
-#line 42 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\PhongPS.hlsl"
+#line 42 "C:\Users\2230135\Desktop\Light\HLSL\PhongPS.hlsl"
 mov r7.xyz, r7.xyzx  // r7.x <- directionalDiffuse.x; r7.y <- directionalDiffuse.y; r7.z <- directionalDiffuse.z
 
 #line 43
@@ -219,7 +219,7 @@ mov r3.xyz, r3.xyzx
 mov r1.w, r1.w
 mov r6.xyz, r6.xyzx
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
 dp3 r2.w, r2.xyzx, r1.xyzx
 add r2.w, r2.w, r2.w
 mov r2.w, -r2.w
@@ -243,7 +243,7 @@ exp r2.x, r2.x  // r2.x <- d
 mul r2.xyz, r2.xxxx, r8.xyzx
 mul r2.xyz, r6.xyzx, r2.xyzx  // r2.x <- <CalcPhongSpecular return value>.x; r2.y <- <CalcPhongSpecular return value>.y; r2.z <- <CalcPhongSpecular return value>.z
 
-#line 43 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\PhongPS.hlsl"
+#line 43 "C:\Users\2230135\Desktop\Light\HLSL\PhongPS.hlsl"
 mov r2.xyz, r2.xyzx  // r2.x <- directionalSpecular.x; r2.y <- directionalSpecular.y; r2.z <- directionalSpecular.z
 
 #line 47
@@ -255,7 +255,7 @@ mov r9.xyz, cb3[4].xyzx
 mov r2.w, cb3[4].w
 mov r3.w, cb3[5].x
 
-#line 57 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\ShadowmapFunctions.hlsli"
+#line 57 "C:\Users\2230135\Desktop\Light\HLSL\ShadowmapFunctions.hlsli"
 resinfo_indexable(texture2d)(float,float,float,float)_uint r10.xy, l(0), t2.xyzw
 mov r10.x, r10.x  // r10.x <- width
 mov r10.y, r10.y  // r10.y <- height
@@ -359,7 +359,7 @@ add r8.xyz, r8.xyzx, r10.xyzx
 mul r8.xyz, r2.wwww, r8.xyzx
 add r8.xyz, r8.xyzx, r9.xyzx  // r8.x <- <CalcShadowColorPCFFilter return value>.x; r8.y <- <CalcShadowColorPCFFilter return value>.y; r8.z <- <CalcShadowColorPCFFilter return value>.z
 
-#line 47 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\PhongPS.hlsl"
+#line 47 "C:\Users\2230135\Desktop\Light\HLSL\PhongPS.hlsl"
 mov r8.xyz, r8.xyzx  // r8.x <- shadow.x; r8.y <- shadow.y; r8.z <- shadow.z
 
 #line 48
@@ -428,7 +428,7 @@ loop
   mov r14.xyz, cb0[r4.w + 9].xyzx
   mov r15.xyz, r5.xyzx
 
-#line 49 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 49 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
   mov r16.xyz, -r12.xyzx
   dp3 r4.w, r16.xyzx, r13.xyzx  // r4.w <- d
 
@@ -440,7 +440,7 @@ loop
   mul r13.xyz, r15.xyzx, r4.wwww
   mul r13.xyz, r14.xyzx, r13.xyzx  // r13.x <- <CalcLambertDiffuse return value>.x; r13.y <- <CalcLambertDiffuse return value>.y; r13.z <- <CalcLambertDiffuse return value>.z
 
-#line 74 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\PhongPS.hlsl"
+#line 74 "C:\Users\2230135\Desktop\Light\HLSL\PhongPS.hlsl"
   mul r13.xyz, r5.wwww, r13.xyzx
   add r10.xyz, r10.xyzx, r13.xyzx
 
@@ -454,7 +454,7 @@ loop
   mov r4.w, r1.w
   mov r16.xyz, r6.xyzx
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
   dp3 r6.w, r12.xyzx, r13.xyzx
   add r6.w, r6.w, r6.w
   mov r6.w, -r6.w
@@ -478,7 +478,7 @@ loop
   mul r12.xyz, r4.wwww, r14.xyzx
   mul r12.xyz, r16.xyzx, r12.xyzx  // r12.x <- <CalcPhongSpecular return value>.x; r12.y <- <CalcPhongSpecular return value>.y; r12.z <- <CalcPhongSpecular return value>.z
 
-#line 76 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\PhongPS.hlsl"
+#line 76 "C:\Users\2230135\Desktop\Light\HLSL\PhongPS.hlsl"
   mul r12.xyz, r5.wwww, r12.xyzx
   add r11.xyz, r11.xyzx, r12.xyzx
 
@@ -573,7 +573,7 @@ loop
   mov r16.xyz, cb0[r5.w + 34].xyzx
   mov r17.xyz, r5.xyzx
 
-#line 49 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 49 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
   mov r18.xyz, -r14.xyzx
   dp3 r5.w, r18.xyzx, r15.xyzx  // r5.w <- d
 
@@ -585,7 +585,7 @@ loop
   mul r15.xyz, r17.xyzx, r5.wwww
   mul r15.xyz, r16.xyzx, r15.xyzx  // r15.x <- <CalcLambertDiffuse return value>.x; r15.y <- <CalcLambertDiffuse return value>.y; r15.z <- <CalcLambertDiffuse return value>.z
 
-#line 105 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\PhongPS.hlsl"
+#line 105 "C:\Users\2230135\Desktop\Light\HLSL\PhongPS.hlsl"
   mul r15.xyz, r4.wwww, r15.xyzx
   add r12.xyz, r12.xyzx, r15.xyzx
 
@@ -599,7 +599,7 @@ loop
   mov r5.w, r1.w
   mov r18.xyz, r6.xyzx
 
-#line 71 "C:\Users\2230135\Desktop\春休みバックアップ(最新) (2)\春休みバックアップ(最新)\HLSL\Light.hlsli"
+#line 71 "C:\Users\2230135\Desktop\Light\HLSL\Light.hlsli"
   dp3 r6.w, r14.xyzx, r15.xyzx
   add r6.w, r6.w, r6.w
   mov r6.w, -r6.w
@@ -623,7 +623,7 @@ loop
   mul r14.xyz, r5.wwww, r16.xyzx
   mul r14.xyz, r18.xyzx, r14.xyzx  // r14.x <- <CalcPhongSpecular return value>.x; r14.y <- <CalcPhongSpecular return value>.y; r14.z <- <CalcPhongSpecular return value>.z
 
-#line 107 "C:\Users\2230135\Desktop\春休みバックアチEE(最新) (2)\春休みバックアチEE(最新)\HLSL\PhongPS.hlsl"
+#line 107 "C:\Users\2230135\Desktop\Light\HLSL\PhongPS.hlsl"
   mul r14.xyz, r4.wwww, r14.xyzx
   add r13.xyz, r13.xyzx, r14.xyzx
 

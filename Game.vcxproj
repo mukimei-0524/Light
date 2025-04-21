@@ -231,6 +231,7 @@
     <None Include="HLSL\Mask.hlsli" />
     <None Include="HLSL\Outline.hlsli" />
     <None Include="HLSL\Phong.hlsli" />
+    <None Include="HLSL\PostEffect.hlsli" />
     <None Include="HLSL\ShadowmapCaster.hlsli" />
     <None Include="HLSL\ShadowmapFunctions.hlsli" />
     <None Include="HLSL\Skybox.hlsli" />
@@ -358,6 +359,14 @@
     <FxCompile Include="HLSL\PhongVS.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="HLSL\PosteEfect_vs.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+    </FxCompile>
+    <FxCompile Include="HLSL\PostEffect_ps.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
     </FxCompile>
     <FxCompile Include="HLSL\ShadowmapCasterVS.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>

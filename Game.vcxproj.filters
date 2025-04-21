@@ -451,6 +451,9 @@
     <None Include="HLSL\ShadowmapFunctions.hlsli">
       <Filter>HLSL\ShadowmapFunctions</Filter>
     </None>
+    <None Include="HLSL\PostEffect.hlsli">
+      <Filter>HLSL</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="HLSL\DebugPS.hlsl">
@@ -521,6 +524,12 @@
     </FxCompile>
     <FxCompile Include="HLSL\ShadowmapCasterVS.hlsl">
       <Filter>HLSL\ShadowmapCaster</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\PosteEfect_vs.hlsl">
+      <Filter>HLSL</Filter>
+    </FxCompile>
+    <FxCompile Include="HLSL\PostEffect_ps.hlsl">
+      <Filter>HLSL</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>
