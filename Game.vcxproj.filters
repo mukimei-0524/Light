@@ -67,6 +67,9 @@
     <Filter Include="HLSL\ShadowmapFunctions">
       <UniqueIdentifier>{90ea7427-2809-4225-9355-8e59bb545311}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Taniiguchi">
+      <UniqueIdentifier>{a3773544-69d1-42a5-9b2c-183d65a17dfe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="External\imgui\imconfig.h">
@@ -246,6 +249,9 @@
     <ClInclude Include="Source\StageManager.h">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="Source\HomingMaker.h">
+      <Filter>Source\Taniiguchi</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="External\imgui\imgui.cpp">
@@ -407,6 +413,9 @@
     <ClCompile Include="Source\StageManager.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="Source\HomingMaker.cpp">
+      <Filter>Source\Taniiguchi</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="HLSL\Debug.hlsli">
@@ -524,12 +533,6 @@
     </FxCompile>
     <FxCompile Include="HLSL\ShadowmapCasterVS.hlsl">
       <Filter>HLSL\ShadowmapCaster</Filter>
-    </FxCompile>
-    <FxCompile Include="HLSL\PosteEfect_vs.hlsl">
-      <Filter>HLSL</Filter>
-    </FxCompile>
-    <FxCompile Include="HLSL\PostEffect_ps.hlsl">
-      <Filter>HLSL</Filter>
     </FxCompile>
   </ItemGroup>
 </Project>

@@ -147,6 +147,7 @@
     <ClInclude Include="Source\Graphics\ToonShader.h" />
     <ClInclude Include="Source\Graphics\UVScrollShader.h" />
     <ClInclude Include="Source\HighResolutionTimer.h" />
+    <ClInclude Include="Source\HomingMaker.h" />
     <ClInclude Include="Source\Input\GamePad.h" />
     <ClInclude Include="Source\Input\Input.h" />
     <ClInclude Include="Source\Input\Mouse.h" />
@@ -203,6 +204,7 @@
     <ClCompile Include="Source\Graphics\Texture.cpp" />
     <ClCompile Include="Source\Graphics\ToonShader.cpp" />
     <ClCompile Include="Source\Graphics\UVScrollShader.cpp" />
+    <ClCompile Include="Source\HomingMaker.cpp" />
     <ClCompile Include="Source\Input\GamePad.cpp" />
     <ClCompile Include="Source\Input\Input.cpp" />
     <ClCompile Include="Source\Input\Mouse.cpp" />
@@ -360,7 +362,7 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
     </FxCompile>
-           <FxCompile Include="HLSL\ShadowmapCasterVS.hlsl">
+    <FxCompile Include="HLSL\ShadowmapCasterVS.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
     </FxCompile>
