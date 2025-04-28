@@ -2,6 +2,7 @@
 
 #include "Graphics/Model.h"
 #include "Projectile.h"
+#include "HomingMaker.h"
 
 // ’Ç”ö’eŠÛ
 class ProjectileHoming : public Projectile
